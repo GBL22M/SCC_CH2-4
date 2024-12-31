@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 using namespace std;
 
@@ -12,7 +11,7 @@ public:
 		, mAuthor(author)
 	{		
 	}
-
+	
 	const string GetTitle() const
 	{
 		return mTitle;

@@ -7,7 +7,8 @@ int main()
     BookManager manager;
 
 
-    while (true) {
+    while (true) 
+    {
         cout << "\n도서관 관리 프로그램" << endl;
         cout << "1. 책 추가" << endl; // 책 정보를 입력받아 책 목록에 추가
         cout << "2. 모든 책 출력" << endl; // 현재 책 목록에 있는 모든 책 출력
