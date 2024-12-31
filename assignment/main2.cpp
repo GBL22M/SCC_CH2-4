@@ -1,11 +1,20 @@
+#define _CRTDBG_MAP_ALLOC
 #include <iostream>
 #include "public/BookManager.h"
 #include "public/BorrowManager.h"
 
 using namespace std;
 
+#ifdef _DEBUG
+    #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#endif
+
 int main()
 {
+#ifdef _DEBUG
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
+
 	BookManager bookManager;
 	BorrowManager borrowManager;
 
@@ -102,7 +111,15 @@ int main()
             cin.ignore();
             getline(cin, title);
 
-            borrowManager.ReturnBook(title);
+            Book* book = bookManager.GetBookByTitle(title);
+            if (book != nullptr)
+            {
+                borrowManager.ReturnBook(book->GetTitle());
+            }
+            else
+            {
+                cout << "존재하지 않는 책입니다\n";
+            }           
         }
         else if (choice == 4)
         {
