@@ -41,8 +41,8 @@ void BookManager::SearchByTitle(string title)
 			cout << "title: " << title << " " << "author: " << book->GetAuthor() << "\n";
 			return;
 		}
-		cout << "Not exist\n";
 	}
+	cout << "Not exist\n";
 }
 
 void BookManager::SearchByAuthor(string author)
@@ -55,8 +55,8 @@ void BookManager::SearchByAuthor(string author)
 			cout << "title: " << book->GetTitle() << " " << "author: " << author << "\n";
 			return;
 		}
-		cout << "Not exist\n";
 	}
+	cout << "Not exist\n";
 }
 
 Book* BookManager::GetBookByTitle(string title)
